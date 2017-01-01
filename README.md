@@ -19,6 +19,5 @@ Q: What's up next?
 A: Here are some ideas with (maybe) more to come:
 ---> authentification for user updates
 ---> authentification for "admin" login
----> reformate timestamp of last update to something readable
 ---> webform to create and delete user
 ---> ...
