@@ -1,4 +1,3 @@
-
 <?
 
 // pseudodyn -  a primitive alternative to third-party dynamic DNS services
@@ -89,7 +88,7 @@ else
 // ### detect and save user / ip / timestamp to file ###
 
 $ip = $_SERVER['REMOTE_ADDR'];
-$time = $_SERVER['REQUEST_TIME'];
+$time = date('Y-m-d H:i:s');
 
 file_put_contents($datafolder.$filename, "$user" . PHP_EOL);
 file_put_contents($datafolder.$filename, "$ip" . PHP_EOL, FILE_APPEND);
