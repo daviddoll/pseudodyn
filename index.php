@@ -9,6 +9,7 @@ $alloweduser = array("user-a", "user-b", "user-c");
 
 // // ### global variables ###
 // ---------------------------------------------------------------------------------------- //
+$timezone = date_default_timezone_set("US/Central");
 $datafolder = "datafolder/";
 @$user = $_GET['user'];
 $filename = "$user.txt";
