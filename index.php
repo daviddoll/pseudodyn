@@ -11,6 +11,12 @@ if (in_array($user, $alloweduser))
 	file_put_contents($datafolder.$filename, "$user" . PHP_EOL);
 	file_put_contents($datafolder.$filename, "$ip" . PHP_EOL, FILE_APPEND);
 	file_put_contents($datafolder.$filename, "$time" . PHP_EOL, FILE_APPEND);
+	if (in_array($user, $loggeduser)) 
+	{
+		file_put_contents($datafolder.$logfilename, "$ip" . PHP_EOL, FILE_APPEND);
+		file_put_contents($datafolder.$logfilename, "$time" . PHP_EOL, FILE_APPEND);
+		file_put_contents($datafolder.$logfilename, "----------" . PHP_EOL, FILE_APPEND);
+	}
 	exit;
 }
 
