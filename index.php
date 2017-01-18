@@ -8,6 +8,13 @@ if (in_array($user, $alloweduser))
 {
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$time = date('Y-m-d H:i:s');
+	$check_last_ip = file($datafolder."$user.txt");
+	$last_ip = $check_last_ip[1];
+	$trim_last_ip = trim($last_ip);
+	if ($trim_last_ip == $ip)
+	{
+		exit;
+	}
 	file_put_contents($datafolder.$filename, "$user" . PHP_EOL);
 	file_put_contents($datafolder.$filename, "$ip" . PHP_EOL, FILE_APPEND);
 	file_put_contents($datafolder.$filename, "$time" . PHP_EOL, FILE_APPEND);
