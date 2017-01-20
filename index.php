@@ -11,6 +11,13 @@ if (in_array($user, $alloweduser))
 	$check_last_ip = file($datafolder."$user.txt");
 	$last_ip = $check_last_ip[1];
 	$trim_last_ip = trim($last_ip);
+	if (!empty($_SERVER['HTTPS'])) {
+	    $protocol = "HTTPS";
+	}
+	else
+	{
+		$protocol = "HTTP";
+	}
 	if ($trim_last_ip == $ip)
 	{
 		exit;
@@ -18,6 +25,7 @@ if (in_array($user, $alloweduser))
 	file_put_contents($datafolder.$filename, "$user" . PHP_EOL);
 	file_put_contents($datafolder.$filename, "$ip" . PHP_EOL, FILE_APPEND);
 	file_put_contents($datafolder.$filename, "$time" . PHP_EOL, FILE_APPEND);
+	file_put_contents($datafolder.$filename, "$protocol" . PHP_EOL, FILE_APPEND);
 	if (in_array($user, $loggeduser)) 
 	{
 		file_put_contents($datafolder.$logfilename, "$ip" . PHP_EOL, FILE_APPEND);
@@ -43,7 +51,8 @@ switch ($user)
 			echo "<tr>";
 			echo "<th>Name</th>";
 		    echo "<th>IP</th>";
-		    echo "<th>Time</th>";
+		    echo "<th>Last Update</th>";
+			echo "<th>Protocol</th>";
 			echo "</tr>";
 			$countalloweduser = count($alloweduser);
 			for ($x = 0; $x < $countalloweduser; $x++)
