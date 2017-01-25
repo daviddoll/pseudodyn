@@ -38,6 +38,10 @@ if (in_array($user, $alloweduser))
 switch ($user)
 	{
 		case 'chief':
+		if (empty($_SERVER['HTTPS'])) 
+			{
+		    	exit;
+			}
 			echo "<html>";
 			echo "<head>";
 			echo "<style>";
@@ -50,8 +54,8 @@ switch ($user)
 			echo "<table>";
 			echo "<tr>";
 			echo "<th>Name</th>";
-		    echo "<th>IP</th>";
-		    echo "<th>Last Update</th>";
+			echo "<th>IP</th>";
+			echo "<th>Last Update</th>";
 			echo "<th>Protocol</th>";
 			echo "</tr>";
 			$countalloweduser = count($alloweduser);
