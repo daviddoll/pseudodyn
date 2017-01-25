@@ -38,7 +38,7 @@ if (in_array($user, $alloweduser))
 switch ($user)
 	{
 		case 'chief':
-		if (empty($_SERVER['HTTPS'])) 
+			if (empty($_SERVER['HTTPS'])) 
 			{
 		    	exit;
 			}
