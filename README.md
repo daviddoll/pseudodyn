@@ -27,12 +27,8 @@ A: You should concider the use of https instead of http. Https encrypts the URL 
 Q: What's up next?
 
 A: Here are some ideas with (maybe) more to come:
----> use a fixed (but generated) passwort for updates instead of cleartext username
-
----> authentification for user updates
-
----> authentification for "admin" login
-
----> webform to create and delete user
-
----> ...
+* use a fixed (but generated) passwort for updates instead of cleartext username
+* authentification for user updates
+* authentification for "admin" login
+* webform to create and delete user
+------------------------

@@ -46,7 +46,7 @@ switch ($user)
 			echo "<head>";
 			echo "<style>";
 			echo "table, th, td {border: 1px solid black;border-collapse: collapse;}";
-			echo "th, td {padding: 5px;";
+			echo "th, td {padding: 5px;}";
 			echo "th {text-align: left;}";
 			echo "</style>";
 			echo "</head>";
